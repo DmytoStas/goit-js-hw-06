@@ -12,3 +12,24 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const galleryListRef = document.querySelector('.gallery');
+
+const makeImgMurkup = ({ url, alt }) => {
+  const imgEl = document.createElement('img');
+  imgEl.src = url;
+  imgEl.alt = alt;
+
+  return imgEl;
+};
+
+const makeItemMurkup = imgInfo => {
+  const itemEl = document.createElement('li');
+  itemEl.appendChild(makeImgMurkup(imgInfo));
+
+  return itemEl.outerHTML;
+};
+
+const listItemMurkup = images.map(makeItemMurkup).join('');
+
+galleryListRef.insertAdjacentHTML('afterbegin', listItemMurkup);
