@@ -5,16 +5,18 @@ form.addEventListener('submit', hendleSubmit);
 function hendleSubmit(event) {
   event.preventDefault();
 
+  const result = {};
+
   const { email, password } = event.currentTarget;
 
   if (email.value === '' || password.value === '') {
     return alert('All fields should be filed!');
   }
 
-  console.log(`userLogin = {
-    email: ${email.value},
-    password: ${password.value}
-  }`);
+  result.email = email.value;
+  result.password = password.value;
 
   event.currentTarget.reset();
+
+  console.log(result);
 }

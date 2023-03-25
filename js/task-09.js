@@ -11,6 +11,7 @@ const colorTextRef = document.querySelector('.color');
 buttonRef.addEventListener('click', hendleClick);
 
 function hendleClick() {
-  body.style.backgroundColor = getRandomHexColor();
-  colorTextRef.textContent = getRandomHexColor();
+  const bgColor = getRandomHexColor();
+  body.style.backgroundColor = bgColor;
+  colorTextRef.textContent = bgColor;
 }
